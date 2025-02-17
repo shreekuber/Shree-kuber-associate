@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>PF & ESIC Cost Calculator</h1>
+    <label>Number of Employees: <input type="number" id="employees"></label>
+    <label>Average Salary per Employee: <input type="number" id="salary"></label>
+    <button onclick="calculateCost()">Calculate</button>
+    <p id="result"></p>
+    <script>
+        function calculateCost() {
+            let employees = document.getElementById('employees').value;
+            let salary = document.getElementById('salary').value;
+            let pf = (salary * 0.12) * employees;
+            let esic = (salary * 0.0325) * employees;
+            document.getElementById('result').innerText = "Estimated PF: ₹" + pf.toFixed(2) + "\nEstimated ESIC: ₹" + esic.toFixed(2);
+        }
+    </script>
+</body>
+</html>
